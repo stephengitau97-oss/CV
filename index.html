@@ -1,32 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My CV Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Portfolio</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #333;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    /* Header */
+    .header {
+        text-align: center;
+        padding: 50px 20px;
+        background: white;
+        border-radius: 12px;
+    }
+
+    .header img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .header h1 {
+        margin: 10px 0 5px;
+    }
+
+    .header p {
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 18px;
+        margin: 5px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        background: #2563eb;
+        color: white;
+    }
+
+    .btn-secondary {
+        background: #e5e7eb;
+        color: #333;
+    }
+
+    /* Sections */
+    .section {
+        margin-top: 25px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #888;
+        font-size: 14px;
+    }
+</style>
 </head>
-<body style="font-family: Arial; max-width: 700px; margin: 40px auto;">
 
-    <h1>Your Name</h1>
-    <h3>Customer Service Representative</h3>
+<body>
 
-    <hr>
+<div class="container">
 
-    <h2>About Me</h2>
-    <p>Write a short professional summary about yourself here.</p>
+    <!-- HEADER -->
+    <div class="header">
+        <img src="https://via.placeholder.com/120" alt="Profile Photo">
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Customer Support</li>
-        <li>Communication</li>
-        <li>Problem Solving</li>
-    </ul>
+        <h1>Your Name</h1>
+        <p>Customer Service Representative | Tech Enthusiast</p>
 
-    <h2>CV</h2>
-    <p>
-        <a href="your-cv.pdf" target="_blank">Download My CV</a>
-    </p>
+        <a class="btn btn-primary" href="your-cv.pdf" target="_blank">Download CV</a>
+        <a class="btn btn-secondary" href="mailto:youremail@example.com">Contact Me</a>
+        <a class="btn btn-secondary" href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
 
-    <h2>Contact</h2>
-    <p>Email: youremail@example.com</p>
+    <!-- ABOUT -->
+    <div class="section">
+        <h2>About Me</h2>
+        <p>
+            Write a short professional summary here. Focus on your strengths, experience in customer service,
+            communication skills, and what you're aiming for in your career.
+        </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+        <h2>Skills</h2>
+        <ul>
+            <li>Customer Support & Communication</li>
+            <li>Problem Solving</li>
+            <li>CRM Tools & Ticketing Systems</li>
+            <li>Time Management</li>
+        </ul>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+        <h2>Experience</h2>
+
+        <p><strong>Customer Service Representative</strong> - Snapplify</p>
+        <ul>
+            <li>Handled customer queries and technical support issues</li>
+            <li>Resolved tickets within SLA timelines</li>
+            <li>Collaborated with internal teams for escalations</li>
+        </ul>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <h2>Education</h2>
+        <p>Diploma / Degree / Certification details here</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 Your Name | Built with GitHub Pages
+    </div>
+
+</div>
 
 </body>
 </html>
