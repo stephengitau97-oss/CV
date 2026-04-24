@@ -4,261 +4,439 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Steven Gitau Ndirangu | Portfolio</title>
-<meta name="description" content="Steven Gitau Ndirangu - Customer Service Specialist with 8+ years experience in SaaS, EdTech, and global support environments." />
+<meta name="description" content="Steven Gitau Ndirangu, Customer Experience Specialist with 8+ years of experience across SaaS, EdTech, e-commerce, and global support environments." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#f6f7fb;
-  --card:#ffffff;
-  --text:#111827;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-  --accent:#2563eb;
-  --shadow:0 10px 30px rgba(0,0,0,0.06);
-  --radius:18px;
-  --max:1100px;
+  --bg0:#07101b;
+  --bg1:#0a1422;
+  --bg2:#101c2e;
+  --card:rgba(255,255,255,0.06);
+  --card-strong:rgba(255,255,255,0.10);
+  --border:rgba(148,163,184,0.18);
+  --border-strong:rgba(96,165,250,0.26);
+  --text:#f8fafc;
+  --muted:#b6c2d1;
+  --muted-2:#8ea0b7;
+  --accent:#60a5fa;
+  --accent-2:#38bdf8;
+  --shadow:0 24px 80px rgba(0,0,0,0.35);
+  --radius:22px;
+  --max:1140px;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
 body{
   margin:0;
-  font-family:Inter,system-ui,sans-serif;
-  background:var(--bg);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:var(--text);
   line-height:1.6;
+  background:
+    radial-gradient(circle at top left, rgba(96,165,250,0.22), transparent 28%),
+    radial-gradient(circle at top right, rgba(56,189,248,0.14), transparent 24%),
+    linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 38%, var(--bg0) 100%);
 }
 
 a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:24px}
 
-.container{max-width:var(--max);margin:auto;padding:24px}
-
-/* TOPBAR */
+/* TOP BAR */
 .topbar{
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  gap:18px;
   padding:14px 18px;
   border-radius:999px;
-  background:#fff;
   border:1px solid var(--border);
+  background:rgba(8,15,26,0.72);
+  backdrop-filter:blur(16px);
   box-shadow:var(--shadow);
   position:sticky;
-  top:10px;
+  top:12px;
+  z-index:20;
 }
-
-.brand{display:flex;align-items:center;gap:12px}
-
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
 .avatar{
-  width:44px;height:44px;
-  border-radius:50%;
-  overflow:hidden;
-  border:2px solid var(--accent);
+  width:46px;height:46px;border-radius:50%;overflow:hidden;
+  border:2px solid rgba(96,165,250,0.9);
+  box-shadow:0 0 0 4px rgba(96,165,250,0.10);
+  flex:0 0 auto;
 }
-
-.avatar img{width:100%;height:100%;object-fit:cover}
-
-.brand-text strong{display:block}
-.brand-text span{font-size:0.85rem;color:var(--muted)}
-
-.nav a{margin-left:14px;color:var(--muted);font-size:0.9rem}
-.nav a:hover{color:var(--accent)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.brand-text{min-width:0}
+.brand-text strong{display:block;font-size:0.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-text span{display:block;color:var(--muted);font-size:0.86rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.nav a{
+  color:var(--muted);
+  font-size:0.92rem;
+  padding:8px 12px;
+  border-radius:999px;
+  transition:0.2s ease;
+}
+.nav a:hover{color:var(--text);background:rgba(96,165,250,0.10)}
 
 /* HERO */
 .hero{
   display:grid;
-  grid-template-columns:1.3fr 0.7fr;
+  grid-template-columns:1.28fr 0.72fr;
   gap:22px;
-  margin-top:24px;
+  margin-top:22px;
 }
-
-.hero-main{
-  padding:42px;
-  border-radius:var(--radius);
-  background:#fff;
+.hero-main,
+.panel,
+.section,
+.contact-card{
   border:1px solid var(--border);
+  background:linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
   box-shadow:var(--shadow);
 }
-
-h1{
-  font-size:3rem;
-  margin:0;
-  line-height:1.1;
+.hero-main{
+  padding:40px;
+  border-radius:calc(var(--radius) + 4px);
+  position:relative;
+  overflow:hidden;
 }
-
-.subtitle{color:var(--muted);margin-top:12px;max-width:60ch}
-
-.cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-
+.hero-main::before{
+  content:"";
+  position:absolute;
+  inset:auto -120px -160px auto;
+  width:420px;height:420px;
+  background:radial-gradient(circle, rgba(96,165,250,0.18), transparent 60%);
+  pointer-events:none;
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 12px;border-radius:999px;
+  background:rgba(96,165,250,0.10);
+  border:1px solid rgba(96,165,250,0.20);
+  color:#dbeafe;
+  font-size:0.86rem;
+  font-weight:600;
+  margin-bottom:16px;
+}
+.kicker .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--accent-2);
+  box-shadow:0 0 0 6px rgba(56,189,248,0.12);
+}
+h1{
+  margin:0;
+  font-size:clamp(2.35rem,5vw,4.5rem);
+  line-height:1.02;
+  letter-spacing:-0.04em;
+}
+.subtitle{
+  margin:16px 0 0;
+  color:var(--muted);
+  max-width:66ch;
+  font-size:1.05rem;
+}
+.hero-actions{
+  margin-top:24px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
 .btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;
   padding:12px 16px;
   border-radius:12px;
-  font-weight:600;
-  transition:0.2s;
-  display:inline-block;
+  font-weight:700;
+  border:1px solid transparent;
+  transition:0.18s ease;
 }
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(135deg, var(--accent), var(--accent-2));color:#fff}
+.btn-secondary{border-color:rgba(148,163,184,0.22);color:var(--text);background:rgba(255,255,255,0.04)}
+.btn-secondary:hover{border-color:rgba(96,165,250,0.45);background:rgba(96,165,250,0.08)}
 
-.btn:hover{transform:translateY(-2px)}
-
-.primary{background:var(--accent);color:#fff}
-.secondary{border:1px solid var(--border);color:var(--text)}
-.secondary:hover{border-color:var(--accent);color:var(--accent)}
-
-/* SIDE */
-.side{display:grid;gap:14px}
-
-.card{
-  padding:18px;
-  border-radius:var(--radius);
-  background:#fff;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
+.panel{border-radius:var(--radius);padding:18px;display:grid;gap:14px}
+.panel h2,.section h2,.contact-card h2{margin:0 0 10px;font-size:1.05rem;letter-spacing:-0.02em}
+.snapshot{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:12px;
 }
-
+.metric{
+  padding:15px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(148,163,184,0.14);
+}
+.metric strong{display:block;font-size:1.16rem;color:#fff}
+.metric span{display:block;margin-top:4px;color:var(--muted);font-size:0.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{
-  display:inline-block;
-  padding:6px 10px;
+  display:inline-flex;align-items:center;
+  padding:8px 11px;
   border-radius:999px;
-  border:1px solid var(--border);
-  font-size:0.85rem;
-  margin:4px;
-  color:var(--muted);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(148,163,184,0.14);
+  color:#dbe7f5;
+  font-size:0.88rem;
 }
 
 /* SECTIONS */
 .section{
   margin-top:22px;
-  padding:22px;
+  padding:24px;
   border-radius:var(--radius);
-  background:#fff;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
 }
+.section p{color:var(--muted);margin:0}
+.section-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:22px;
+}
+.role-list{display:grid;gap:16px;margin-top:12px}
+.role{
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(148,163,184,0.14);
+}
+.role-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:baseline;
+  margin-bottom:8px;
+}
+.role h3{margin:0;font-size:1rem}
+.role .meta{color:var(--muted-2);font-size:0.92rem}
+.role ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.role li{margin:7px 0}
+.list{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+.list-item{
+  padding:14px 15px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(148,163,184,0.14);
+  color:#e8eef8;
+}
+.list-item small{display:block;margin-top:4px;color:var(--muted-2)}
 
-h2{color:var(--text);margin-top:0}
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:12px;
+  margin-top:14px;
+}
+.contact-tile{
+  padding:15px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(148,163,184,0.14);
+}
+.contact-tile span{display:block;color:var(--muted);font-size:0.86rem;margin-bottom:4px}
+.contact-tile a,.contact-tile div{font-weight:600;color:#fff;word-break:break-word}
 
-ul{color:var(--muted)}
-
-/* CTA */
-.hire{
-  margin-top:30px;
-  padding:30px;
-  text-align:center;
+.footer-cta{
+  margin-top:22px;
+  padding:26px;
   border-radius:var(--radius);
-  background:#fff;
-  border:1px solid var(--border);
+  background:linear-gradient(135deg, rgba(96,165,250,0.12), rgba(255,255,255,0.04));
+  border:1px solid rgba(96,165,250,0.18);
   box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
 }
-
+.footer-cta p{margin:6px 0 0;color:var(--muted);max-width:64ch}
 footer{
   text-align:center;
-  margin-top:30px;
-  color:var(--muted);
-  font-size:0.85rem;
+  padding:28px 10px 10px;
+  color:var(--muted-2);
+  font-size:0.88rem;
 }
 
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  h1{font-size:2.2rem}
+@media (max-width: 980px){
+  .hero,.section-grid,.contact-grid{grid-template-columns:1fr}
+  .topbar{border-radius:24px;align-items:flex-start;flex-direction:column}
+  .nav{justify-content:flex-start}
+}
+
+@media (max-width: 640px){
+  .container{padding:16px}
+  .hero-main{padding:24px}
+  h1{font-size:2.25rem}
+  .btn{width:100%}
+  .hero-actions{flex-direction:column}
 }
 </style>
 </head>
 
 <body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="avatar"><img src="profile.jpg" alt="Profile photo of Steven Gitau Ndirangu"></div>
+        <div class="brand-text">
+          <strong>Steven Gitau Ndirangu</strong>
+          <span>Customer Experience Specialist</span>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<div class="container">
+    <section class="hero">
+      <div class="hero-main">
+        <div class="kicker"><span class="dot"></span> Remote-ready support professional with 8+ years of experience</div>
+        <h1>Customer Experience Specialist</h1>
+        <p class="subtitle">
+          8+ years of experience across SaaS, EdTech, and e-commerce support environments.
+          I specialise in omnichannel customer support, escalation management, product adoption, and CRM-driven service delivery.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./steven%20ndirangu%202026.pdf" target="_blank" rel="noreferrer">Download CV</a>
+          <a class="btn btn-secondary" href="mailto:stephengitau97@gmail.com">Email me</a>
+          <a class="btn btn-secondary" href="tel:+254705417940">Call me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/steven-gitau-ndirangu/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="brand">
-    <div class="avatar"><img src="profile.jpg" /></div>
-    <div class="brand-text">
-      <strong>Steven Gitau Ndirangu</strong>
-      <span>Customer Service Specialist</span>
+      <aside class="panel">
+        <div>
+          <h2>Profile Snapshot</h2>
+          <div class="snapshot">
+            <div class="metric"><strong>8+ Years</strong><span>Customer support experience</span></div>
+            <div class="metric"><strong>Remote</strong><span>Work-ready setup</span></div>
+            <div class="metric"><strong>EdTech</strong><span>Platform support</span></div>
+            <div class="metric"><strong>E-commerce</strong><span>Customer-facing service</span></div>
+          </div>
+        </div>
+        <div>
+          <h2>Tools & Platforms</h2>
+          <div class="chips">
+            <span class="chip">Zendesk</span>
+            <span class="chip">Freshdesk</span>
+            <span class="chip">HubSpot</span>
+            <span class="chip">Intercom</span>
+            <span class="chip">LiveChat</span>
+            <span class="chip">Shopify</span>
+            <span class="chip">Stripe</span>
+            <span class="chip">Slack</span>
+            <span class="chip">Jira</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">Microsoft Office</span>
+            <span class="chip">CRM Systems</span>
+            <span class="chip">Help Centre Tools</span>
+            <span class="chip">Ticketing Systems</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        Customer Experience Specialist with a strong record of supporting global users, improving service processes,
+        and delivering calm, effective solutions in fast-paced environments. I work comfortably across email, chat,
+        voice, and social channels, with a focus on quality, empathy, and efficiency.
+      </p>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="role-list">
+        <article class="role">
+          <div class="role-top">
+            <h3>Snapplify, Customer Service / Escalation Support, L2</h3>
+            <div class="meta">March 2022 – Present | Remote</div>
+          </div>
+          <ul>
+            <li>Delivered high-quality omnichannel support for EdTech solutions across African markets.</li>
+            <li>Handled escalations and advanced support issues, resolving complex cases with a strong focus on customer outcomes.</li>
+            <li>Supported institutional and individual clients, guided product adoption, and contributed to knowledge base improvement.</li>
+            <li>Worked cross-functionally with product, sales, and technical teams to improve response times and service quality.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-top">
+            <h3>Influx, Customer Support Agent / Client Team Leader</h3>
+            <div class="meta">October 2019 – March 2022 | Remote</div>
+          </div>
+          <ul>
+            <li>Supported global SaaS clients, diagnosing issues and guiding users through platform features and resolutions.</li>
+            <li>Managed support tickets efficiently within SLA timelines across Zendesk and Intercom.</li>
+            <li>Recognised for leadership and consistency, with a progression into Client Team Leader responsibilities.</li>
+            <li>Collaborated with QA and operations teams to improve workflows and customer experience standards.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="role-top">
+            <h3>Betin Kenya, Customer Service Representative / Senior CSR</h3>
+            <div class="meta">September 2016 – October 2019 | Nairobi, Kenya</div>
+          </div>
+          <ul>
+            <li>Provided multichannel support to a high-volume customer base across chat, email, calls, and social media.</li>
+            <li>Interpreted and communicated complex Terms and Conditions clearly and professionally.</li>
+            <li>Managed CRM data and ticket tracking, while consistently exceeding performance expectations.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-grid">
+      <div id="skills" class="section">
+        <h2>Core Skills</h2>
+        <p>Escalation Management • Omnichannel Support • CRM Administration • Customer Education • Process Improvement • Team Collaboration • Troubleshooting</p>
+      </div>
+
+      <div class="section">
+        <h2>Education & Certifications</h2>
+        <div class="list">
+          <div class="list-item">BSc, Recreation and Sports Management, Kenyatta University<small>2012 – 2016, Distinction in Communication Skills</small></div>
+          <div class="list-item">Diploma in Customer Service, Alison<small>July 2023, Distinction</small></div>
+          <div class="list-item">Freshdesk Agent Expert Certification, Freshworks Academy<small>April 2022, 97%</small></div>
+          <div class="list-item">Certificate in IT, Wantech College<small>2013, Distinction</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-tile"><span>Email</span><a href="mailto:stephengitau97@gmail.com">stephengitau97@gmail.com</a></div>
+        <div class="contact-tile"><span>Phone</span><a href="tel:+254705417940">+254 705 417 940</a></div>
+        <div class="contact-tile"><span>LinkedIn</span><a href="https://www.linkedin.com/in/steven-gitau-ndirangu/" target="_blank" rel="noreferrer">Profile link</a></div>
+        <div class="contact-tile"><span>Location</span><div>Nairobi, Kenya, Remote</div></div>
+      </div>
+    </section>
+
+    <div class="footer-cta">
+      <div>
+        <h2>Open to new opportunities</h2>
+        <p>Available for remote customer experience, support, and operations roles across global teams.</p>
+      </div>
+      <div class="hero-actions" style="margin-top:0">
+        <a class="btn btn-primary" href="mailto:stephengitau97@gmail.com">Start a conversation</a>
+      </div>
     </div>
+
+    <footer>© 2026 Steven Gitau Ndirangu • Customer Experience Portfolio</footer>
   </div>
-  <div class="nav">
-    <a href="#about">About</a>
-    <a href="#exp">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-main">
-    <h1>Customer Experience Specialist</h1>
-    <p class="subtitle">
-      8+ years of experience in SaaS, EdTech, and e-commerce support environments.
-      Skilled in escalation management, CRM systems, and delivering high-quality omnichannel customer support.
-    </p>
-
-    <div class="cta">
-      <a class="btn primary" href="steven%20ndirangu%202026.pdf">Download CV</a>
-      <a class="btn secondary" href="mailto:stephengitau97@gmail.com">Contact</a>
-      <a class="btn secondary" href="https://www.linkedin.com/in/steven-gitau-ndirangu/" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-
-  <div class="side">
-    <div class="card">
-      <strong>Profile Snapshot</strong>
-      <p style="color:var(--muted)">Senior Support • Remote Ready • SaaS & EdTech</p>
-    </div>
-
-    <div class="card">
-      <strong>Tools</strong><br/>
-      <span class="chip">Zendesk</span>
-      <span class="chip">Freshdesk</span>
-      <span class="chip">HubSpot</span>
-      <span class="chip">Intercom</span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="section">
-  <h2>About Me</h2>
-  <p>
-    Customer Service Specialist with extensive experience supporting global customers across digital platforms.
-    Focused on delivering efficient resolutions, improving customer journeys, and supporting product adoption.
-  </p>
-</div>
-
-<!-- EXPERIENCE -->
-<div id="exp" class="section">
-  <h2>Experience</h2>
-  <ul>
-    <li><strong>Snapplify</strong> – Customer Service Specialist (2022–Present)</li>
-    <li><strong>Influx</strong> – Customer Support Specialist (2019–2022)</li>
-    <li><strong>Betin Kenya</strong> – Senior Customer Service Representative (2016–2019)</li>
-  </ul>
-</div>
-
-<!-- SKILLS -->
-<div id="skills" class="section">
-  <h2>Core Skills</h2>
-  <p>
-    Escalation Management • CRM Systems • Omnichannel Support • Customer Education • Process Improvement
-  </p>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="hire">
-  <h2>Let’s Work Together</h2>
-  <p>Open to remote customer experience and support roles globally.</p>
-  <a class="btn primary" href="mailto:stephengitau97@gmail.com">Hire Me</a>
-</div>
-
-<footer>© 2026 Steven Gitau Ndirangu • Portfolio</footer>
-
-</div>
-
 </body>
 </html>
